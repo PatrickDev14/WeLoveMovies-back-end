@@ -12,12 +12,12 @@ app.use(express.json());
 app.use(cors());
 
 // routes
-app.use("movies", moviesRouter);
+app.use("/movies", moviesRouter);
 app.use("/reviews", reviewsRouter);
 
 
 // errors
-app.use(asyncErrorBoundary)
+app.use(asyncErrorBoundary);
 
 // Not Found handler
 app.use((req, res, next) => {

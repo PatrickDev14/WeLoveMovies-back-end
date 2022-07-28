@@ -9,9 +9,10 @@ router.route("/:movieId")
   .all(methodNotAllowed);
 
 router.route("/:movieId/theaters")
-  .get(controller.readTheaters);
+  .get(controller.readTheaters)
+  .all(methodNotAllowed);
 
 router.route("/:movieId/reviews")
-  .get(controller.readReviews);
-
+  .get(controller.readReviews)
+  .all(methodNotAllowed);
 module.exports = router;

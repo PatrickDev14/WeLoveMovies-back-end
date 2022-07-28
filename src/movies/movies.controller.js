@@ -26,7 +26,7 @@ async function list(req, res) {
 }
 
 //get by Id
-async function read(req, res, next) {
+function read(req, res, next) {
   res.json({ data: res.locals.movie });
 }
 
