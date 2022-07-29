@@ -1,4 +1,3 @@
-//dependencies
 const service = require("./reviews.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
@@ -10,7 +9,7 @@ async function reviewExists(req, res, next) {
     res.locals.review = review;
     return next();
   }
-  next({ status: 404, message: `Review cannot be found` });
+  next({ status: 404, message: "Review cannot be found" });
 }
 
 //update review by Id

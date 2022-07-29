@@ -9,9 +9,9 @@ async function movieExists(req, res, next) {
     res.locals.movie = movie;
     return next();
   }
-  return next({
+  next({
     status: 404,
-    message: `Movie cannot be found.`,
+    message: "Movie cannot be found."
   });
 }
 
@@ -47,7 +47,7 @@ async function readReviews(req, res) {
 //exports
 module.exports = {
   list,
-  read: [asyncErrorBoundary(movieExists), read],
+  read: [asyncErrorBoundary(movieExists), asyncErrorBoundary(read)],
   readTheaters: [
     asyncErrorBoundary(movieExists),
     asyncErrorBoundary(readTheaters),

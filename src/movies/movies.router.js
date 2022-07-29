@@ -15,4 +15,5 @@ router.route("/:movieId/theaters")
 router.route("/:movieId/reviews")
   .get(controller.readReviews)
   .all(methodNotAllowed);
+  
 module.exports = router;
